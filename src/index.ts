@@ -7,7 +7,7 @@ app.listen(PORT, () => {logger.info(`app listening on port ${PORT}`)});
 app.get('/list', (request, response) =>{
     logger.info('request: POST | route: list');
    
-    const PATH = HOME as any+request.query.path;
+    const PATH = request.query.path===undefined ? HOME as any + '' : HOME as any + request.query.path;    
     const stat = fs.statSync(PATH);
     
     stat.isDirectory()

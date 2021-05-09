@@ -2,7 +2,6 @@ const loc = new window.URL(window.location.href);
 const serverUrl = new window.URL(loc.protocol+'//'+loc.hostname+':3000/list'+loc.search);
 
 const setUp = async() => {
-    updateQuery(loc, '/CodeProjects/')
     const data = await readDir();
     displayData(data);
 }
@@ -21,6 +20,10 @@ const displayData = async (data) => {
         label.setAttribute('class', 'fileManagerItem');
         label.setAttribute('value', dir.name);
         label.textContent=dir.name;
+        label.onclick = () => {
+            updateQuery(loc, dir.name);
+            readDir();
+        }
         mainContainer.appendChild(label);
     }
 }
