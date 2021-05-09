@@ -1,0 +1,15 @@
+.gridContainer {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto auto auto;
+      grid-template-columns: auto auto auto auto;
+  padding: 10px;
+}
+
+.gridContainer .fileManagerItem {
+  background-color: white;
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+/*# sourceMappingURL=main.css.map */
