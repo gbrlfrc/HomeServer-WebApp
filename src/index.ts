@@ -4,25 +4,34 @@ import * as fs from 'fs';
 
 app.listen(PORT, () => {logger.info(`app listening on port ${PORT}`)});
 
-app.get('/list', (request, response) =>{
+app.get('/list', async (request, response) =>{
     logger.info('request: POST | route: list');
-   
-    const PATH = request.query.path===undefined ? HOME as any + '' : HOME as any + request.query.path;    
-    const stat = fs.statSync(PATH);
-    
+
+    const relPath = request.query.path;
+    const PATH = relPath===undefined ? HOME as any + '' : HOME as any + relPath;
+    const stat = fs.statSync(PATH);    
+
     stat.isDirectory()
-        ? (
+        ?(
             fs.readdir(PATH, (err, dirent) => {
-                if (err) return response.json({status: 404, dirent: null, path: PATH, isFile: false});
-                else {
-                    let obj=[];
-                    for (let dir of dirent){
-                        fs.statSync(PATH+dir).isDirectory()
-                            ? obj.push({name: dir, isFile: false, path: dir})
-                            : obj.push({name: dir, isFile: true, path: dir})
-                    }
-                    return response.json({status: 200, dirent: obj, path: PATH, isFile: false})
+                if (err) return response.json({status: 404, dirent: null, path: relPath, isFile: false})
+                const filtDirent = dirent.filter(dir => !dir.startsWith('.'))
+                let obj=[]
+                for (let dir of filtDirent){
+                    fs.statSync(PATH+'/'+dir).isDirectory()
+                        ? obj.push({name: dir, isFile: false, path: relPath+dir})
+                        : obj.push({name: dir, isFile: true, path: relPath+dir})
                 }
+                return response.json({status: 200, dirent: obj, path: relPath, isFile: false})
             })
-        ) : response.json({status: 200, dirent: null, path: PATH, isFile: true})
+        ):(
+            () => {return response.json({status:200, dirent: null, path: relPath, isFile: true})}
+        )
 });
+
+const getStatFile = async (file: string) => {
+    fs.stat(file, (err, stat) => {
+        if (err) return err;
+        else return stat;
+    })
+}
