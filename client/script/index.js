@@ -12,13 +12,20 @@ const displayData = async () => {
     const data = await readDir();
     console.log(data);
     const mainContainer = document.getElementById('fileManager');
-    for (let dir of data.dirent){
-        const label = document.createElement('div');
-        label.setAttribute('class', 'fileManagerItem');
-        label.setAttribute('value', dir.name);
-        label.textContent=dir.name;
-        label.onclick = () => { window.location = updateQuery(loc, dir);}
-        mainContainer.appendChild(label);
+    if (data.isFile) {
+        console.log('IS A FILE')
+    }else{
+        for (let dir of data.dirent){
+            const label = document.createElement('div');
+            label.setAttribute('class', 'fileManagerItem');
+            dir.isFile
+            ? label.classList.add('file')
+            : label.classList.add('directory')
+            label.setAttribute('value', dir.name);
+            label.textContent=dir.name;
+            label.onclick = () => { window.location = updateQuery(loc, dir);}
+            mainContainer.appendChild(label);
+        }
     }
 }
 

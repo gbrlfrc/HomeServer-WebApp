@@ -12,4 +12,12 @@
   font-size: 30px;
   text-align: center;
 }
+
+.gridContainer .files {
+  color: black;
+}
+
+.gridContainer .directory {
+  color: blue;
+}
 /*# sourceMappingURL=main.css.map */
