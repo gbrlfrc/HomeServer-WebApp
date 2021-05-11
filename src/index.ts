@@ -3,7 +3,6 @@ import {logger, PORT, HOME} from './const';
 import * as fs from 'fs';
 import { response } from './util/interface';
 import readline from 'readline';
-import { createBrotliCompress } from 'zlib';
 
 app.listen(PORT, () => {logger.info(`app listening on port ${PORT}`)});
 

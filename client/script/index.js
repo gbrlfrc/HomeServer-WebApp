@@ -15,7 +15,6 @@ const displayData = async () => {
         if (data.status === 404) console.log('error to retrive file content');
         else {
             const body = document.getElementById('body');
-            console.log(data.fileCont)
             for (let line of data.fileCont){
                 const pre = document.createElement('pre')
                 pre.textContent = line;
@@ -38,6 +37,7 @@ const displayData = async () => {
 }
 
 const updateQuery = (url, dir) => {
+    console.log(dir);
     const query = url.searchParams;
     query.set('path', dir.isFile ? dir.path : dir.path+'/');
     url.search=query.toString();
