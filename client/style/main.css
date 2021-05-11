@@ -1,23 +1,29 @@
 .gridContainer {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: auto auto auto auto;
-      grid-template-columns: auto auto auto auto;
-  padding: 10px;
+  -ms-grid-columns: auto auto auto auto auto;
+      grid-template-columns: auto auto auto auto auto;
+  padding: 20px;
+  border: 1px solid black;
 }
 
 .gridContainer .fileManagerItem {
-  background-color: white;
-  padding: 20px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  width: 10%;
+}
+
+.gridContainer .fileManagerItem:hover {
+  cursor: pointer;
+}
+
+.gridContainer .textContainer {
+  padding: 2px 16px;
   font-size: 30px;
   text-align: center;
 }
 
-.gridContainer .files {
-  color: black;
-}
-
-.gridContainer .directory {
-  color: blue;
+body {
+  padding: 20px;
 }
 /*# sourceMappingURL=main.css.map */
