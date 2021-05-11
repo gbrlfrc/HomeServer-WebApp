@@ -53,6 +53,11 @@ const buildCard = (data) =>{
 }
 
 const transposeFile = (data) => {
+    const mainContainer = document.getElementById('fileManager')
+    const p = document.createElement('p')
+    p.textContent=data.path;
+    p.classList.add('titleFile');
+    mainContainer.appendChild(p)
     const body = document.getElementById('body');
     for (let line in data.fileCont){
         const pre = document.createElement('pre')

@@ -3,8 +3,13 @@
   display: grid;
   -ms-grid-columns: auto auto auto auto auto;
       grid-template-columns: auto auto auto auto auto;
-  padding: 20px;
+  padding: 15px;
   border: 1px solid black;
+}
+
+.gridContainer .titleFile {
+  font-size: 20px;
+  text-decoration: underline;
 }
 
 .gridContainer .fileManagerItem {
