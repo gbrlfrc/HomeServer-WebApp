@@ -19,15 +19,26 @@
             <a class='fa fa-cut'> cut</a>
             <a class='fa fa-copy'> copy</a>
             <a class='fa fa-clipboard'> paste</a>
+            <a class='fa fa-plus-square' id='newDir'> directory</a>
             <a class='fa fa-download' id='toolDownload'> download</a>
             <a class='fa fa-upload'> upload</a>
             <a class='fa fa-refresh' id='toolRefresh'> refresh</a>
         </div>
+
+        <div class="form-popup" id="myForm">
+            <p>Directory Name</p>
+            <input type="text" placeholder="name" id='newDirName' required>
+
+            <button type="button" class="btn cancel" onclick="createDir()">Ok</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">Cancel</button>
+        </div>
+
         <div class="gridContainer" id='fileManager'>
             
         </div>
         
         <script src='./script/index.js'></script>
         <script src='./script/toolCallback.js'></script>
+        <script src='./script/util.js'></script>
     </body>
 </html>

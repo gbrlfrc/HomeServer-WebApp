@@ -72,14 +72,14 @@ const transposeFile = (data) => {
     }
 }
 
-const downloadFile = () => {
+const attachBlob = () => {
     const file = document.getElementById('lastFile').value;
     fetch(serverUrl+'download', {
-        method: 'POSt',
+        method: 'POST',
         headers: {
             'Content-Type' : 'application/json'
         },
-        body: JSON.stringify({path: '/'+file})
+        body: JSON.stringify({path: file})
     })
         .then(res => res.blob())
         .then(blob => {
