@@ -29,4 +29,4 @@ Access to remote File System via Web-App.<br>
 - [x] CLIENT: FileManager workflow
 - [ ] CLIENT: LogIn
 - [ ] CLIENT: js, python, html, css Parser
-- [ ] CLIENT: Live file editor
+- [ ] CLIENT: Live editor
