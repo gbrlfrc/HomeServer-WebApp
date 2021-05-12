@@ -9,4 +9,6 @@ Access to remote File System via Web-App.
 <br>
 
 * To start server `yarn dev /absoulute/path/to/dir` or `yarn start /absoulute/path/to/dir`.
+NOTE: alternatively you can use the bash script `start.sh` passing the directory as argument.<br> 
+
 * To start client simply open `HomeServer-WebApp/client/index.html` on an HTTP server like [Apache](https://www.html.it/guide/guida-apache/) or [VS-Code LiveServer](https://github.com/ritwickdey/vscode-live-server) extension.
