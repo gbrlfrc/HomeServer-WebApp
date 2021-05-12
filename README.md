@@ -12,3 +12,11 @@ Access to remote File System via Web-App.
 <br>NOTE: alternatively you can use the bash script `start.sh` passing the directory as argument.
 
 * To start client simply open `HomeServer-WebApp/client/index.html` on an HTTP server like [Apache](https://www.html.it/guide/guida-apache/) or [VS-Code LiveServer](https://github.com/ritwickdey/vscode-live-server) extension.
+
+# ToDo
+
+- [x] API: download file 
+- [x] API: compress and download directory 
+- [x] API: add and remove directory 
+- [ ] authenication
+  - [ ] ciao 
