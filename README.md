@@ -1,6 +1,7 @@
 # WebApp.Server
 
-Access to remote File System via Web-App.
+Access to remote File System via Web-App.<br>
+![](https://github.com/gbrlfrc/HomeServer-WebApp/blob/main/client/assets/preview.png)
 
 # Installation & Usage
 
