@@ -1,1 +1,9 @@
-GET http://localhost:3000/list?path=Ciao
+GET http://localhost:3000/list?path=
+
+###
+POST http://localhost:3000/download
+Content-Type: application/json
+
+{
+    "path": "/WebSite/index.html" 
+}

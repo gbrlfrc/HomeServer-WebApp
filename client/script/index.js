@@ -1,8 +1,8 @@
 const loc = new window.URL(window.location.href);
-const serverUrl = new window.URL(loc.protocol+'//'+loc.hostname+':3000/list'+loc.search);
+const serverUrl = new window.URL(loc.protocol+'//'+loc.hostname+':3000');
 
 const readDir = async() => {
-    const response = await fetch(serverUrl, {
+    const response = await fetch(serverUrl+'list'+loc.search, {
         method: 'GET',
     }); 
     return response.json();
@@ -33,13 +33,14 @@ const buildCard = (data) =>{
         card.setAttribute('class', 'fileManagerItem');
         const img = document.createElement('img');
         img.setAttribute('style', 'width:100%')
-        if (dir.isFile){
-            img.setAttribute('src', './assets/file.png');
-            img.setAttribute('alt', 'FILE')
-        }else{
-            img.setAttribute('src', './assets/dir.png');
-            img.setAttribute('alt', 'DIR')
-        }
+        dir.isFile
+            ? (
+                img.setAttribute('src', './assets/file.png'),
+                img.setAttribute('alt', 'FILE')
+            ) : (
+                img.setAttribute('src', './assets/dir.png'),
+                img.setAttribute('alt', 'DIR')
+            )
         card.setAttribute('value', dir.name);
         card.appendChild(img);
         const textContent = document.createElement('div');
@@ -47,7 +48,9 @@ const buildCard = (data) =>{
         const dirName = document.createElement('p');
         dirName.textContent=dir.name;
         card.appendChild(dirName)
-        card.onclick = () => { window.location = updateQuery(loc, dir);}
+        card.addEventListener('dblclick', () => {
+            window.location = updateQuery(loc, dir);
+        })
         mainContainer.appendChild(card);
     }
 }
@@ -64,4 +67,24 @@ const transposeFile = (data) => {
         pre.textContent = line+'   '+data.fileCont[line];
         body.appendChild(pre);
     }
+}
+
+const downloadFile = () => {
+    fetch(serverUrl+'download', {
+        method: 'POSt',
+        headers: {
+            'Content-Type' : 'application/json'
+        },
+        body: JSON.stringify({path: '/WebSite/index.html'})
+    })
+        .then(res => res.blob())
+        .then(blob => {
+            var url = window.URL.createObjectURL(blob);
+            var a = document.createElement('a');
+            a.href = url;
+            a.download = "filename.html";
+            document.body.appendChild(a);
+            a.click();    
+            a.remove();
+        })
 }

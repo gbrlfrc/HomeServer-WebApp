@@ -6,8 +6,8 @@ import readline from 'readline';
 
 app.listen(PORT, () => {logger.info(`app listening on port ${PORT}`)});
 
-app.get('/list', async (request, response) =>{
-    logger.info('request: POST | route: list');
+app.get('/list', async (request, response) =>{   
+    logger.info('request: GET | route: list');
 
     const relPath = request.query.path;
     const PATH = relPath===undefined ? HOME as any + '' : HOME as any + relPath;
@@ -36,3 +36,12 @@ app.get('/list', async (request, response) =>{
         })
     }
 });
+
+app.post('/download', async(request, response) => {
+    logger.info('request: POST | route: download')
+    const filePath = request.body.path;
+    const fileName = filePath.split('/')
+    response.download(HOME+filePath, fileName[fileName.length-1], (err) => {
+        if (err) console.log(err);
+    })
+})
