@@ -18,6 +18,7 @@ Access to remote File System via Web-App.
 - [x] API: download file 
 - [x] API: compress and download directory 
 - [x] API: add and remove directory 
+- [ ] API: upload multiple file and directory
 - [ ] OAuth Server
   - [ ] Authentication
     - [ ] NeDB database credentials
