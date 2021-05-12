@@ -23,3 +23,8 @@ Access to remote File System via Web-App.
     - [ ] NeDB database credentials
     - [ ] Bcrypt credentials encrypting 
   - [ ] Authorization
+    - [ ] Access and Refresh token workflow
+- [x] CLIENT: FileManager workflow
+- [ ] CLIENT: LogIn
+- [ ] CLIENT: js, python, html, css Parser
+- [ ] CLIENT: Live file editor
