@@ -16,9 +16,9 @@
         <!-- <input type="submit" value='porco' onclick='downloadFile()'> -->
         <p hidden id='lastFile'></p>
         <div class="topnav">
-            <a class='fa fa-cut'> cut</a>
             <a class='fa fa-copy'> copy</a>
             <a class='fa fa-clipboard'> paste</a>
+            <a class='fa fa-unlink' id='deleteElement'> delete</a>
             <a class='fa fa-plus-square' id='newDir'> directory</a>
             <a class='fa fa-download' id='toolDownload'> download</a>
             <a class='fa fa-upload'> upload</a>
@@ -30,7 +30,13 @@
             <input type="text" placeholder="name" id='newDirName' required>
 
             <button type="button" class="btn cancel" onclick="createDir()">Ok</button>
-            <button type="button" class="btn cancel" onclick="closeForm()">Cancel</button>
+            <button type="button" class="btn cancel" onclick="closeForm_newDir()">Cancel</button>
+        </div>
+
+        <div class="form-popup" id="myForm2">
+            <p id='deleteFormTitle'></p>
+            <button type="button" class="btn cancel" onclick="deleteEl()">Ok</button>
+            <button type="button" class="btn cancel" onclick="closeForm_delEl()">Cancel</button>
         </div>
 
         <div class="gridContainer" id='fileManager'>

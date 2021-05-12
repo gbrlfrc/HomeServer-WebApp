@@ -78,3 +78,15 @@ app.post('/newDir', async (request, response) => {
         return response.json({status: 200, msg:""})
     })
 })
+
+app.post('/deleteElement', async (request, response) => {
+    logger.info('request: POST | route: deleteElement')
+    const path = HOME+request.body.path;
+    fs.rm(path, {recursive: true}, (err)=> {
+        if(err) {
+            console.error(err)
+            return response.json({status: 400, msg:"Failed to delete element"})
+        }
+        return response.json({status: 200, msg:''})
+    })
+})
