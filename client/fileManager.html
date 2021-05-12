@@ -9,20 +9,25 @@
 
         <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
         <link rel='stylesheet' href='./style/main.css'>
-        <script src='./script/index.js'></script>
-
+        
     </head>
-
+    
     <body onload="displayData()" id='body'>
         <!-- <input type="submit" value='porco' onclick='downloadFile()'> -->
-        <!-- <div class="topnav">
-            <a class="active" href="#home">Home</a>
-            <a href="#news">News</a>
-            <a href="#contact">Contact</a>
-            <a href="#about">About</a>
-        </div> -->
-        <div class="gridContainer" id='fileManager'>
-
+        <p hidden id='lastFile'></p>
+        <div class="topnav">
+            <a class='fa fa-cut'> cut</a>
+            <a class='fa fa-copy'> copy</a>
+            <a class='fa fa-clipboard'> paste</a>
+            <a class='fa fa-download' id='toolDownload'> download</a>
+            <a class='fa fa-upload'> upload</a>
+            <a class='fa fa-refresh' id='toolRefresh'> refresh</a>
         </div>
+        <div class="gridContainer" id='fileManager'>
+            
+        </div>
+        
+        <script src='./script/index.js'></script>
+        <script src='./script/toolCallback.js'></script>
     </body>
 </html>

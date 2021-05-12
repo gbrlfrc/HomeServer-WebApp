@@ -43,14 +43,17 @@ const buildCard = (data) =>{
             )
         card.setAttribute('value', dir.name);
         card.appendChild(img);
-        const textContent = document.createElement('div');
-        textContent.classList.add('textContainer')
+        const textCont = document.createElement('div');
+        textCont.classList.add('textContainer')
         const dirName = document.createElement('p');
         dirName.textContent=dir.name;
-        card.appendChild(dirName)
+        card.onclick = () => {
+            document.getElementById('lastFile').value = dir.path;
+        }
         card.addEventListener('dblclick', () => {
             window.location = updateQuery(loc, dir);
         })
+        card.appendChild(dirName);
         mainContainer.appendChild(card);
     }
 }
@@ -70,19 +73,20 @@ const transposeFile = (data) => {
 }
 
 const downloadFile = () => {
+    const file = document.getElementById('lastFile').value;
     fetch(serverUrl+'download', {
         method: 'POSt',
         headers: {
             'Content-Type' : 'application/json'
         },
-        body: JSON.stringify({path: '/WebSite/index.html'})
+        body: JSON.stringify({path: '/'+file})
     })
         .then(res => res.blob())
         .then(blob => {
             var url = window.URL.createObjectURL(blob);
             var a = document.createElement('a');
             a.href = url;
-            a.download = "filename.html";
+            a.download = file.split('/')[file.split('/').length-1];
             document.body.appendChild(a);
             a.click();    
             a.remove();
