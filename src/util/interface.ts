@@ -5,3 +5,9 @@ export interface response{
     isFile: boolean,
     fileCont: [] | null
 }
+
+export interface log{
+    status: number,
+    action: string,
+    msg: string
+}
