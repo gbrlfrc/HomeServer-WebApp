@@ -1,6 +1,7 @@
 # WebApp.Server
 
-Access to remote File System via Web-App.
+Access to remote File System via Web-App.<br>
+![](https://github.com/gbrlfrc/HomeServer-WebApp/blob/main/client/assets/preview.png)
 
 # Installation & Usage
 
@@ -29,4 +30,4 @@ Access to remote File System via Web-App.
 - [x] CLIENT: FileManager workflow
 - [ ] CLIENT: LogIn
 - [ ] CLIENT: js, python, html, css Parser
-- [ ] CLIENT: Live file editor
+- [ ] CLIENT: Live editor
