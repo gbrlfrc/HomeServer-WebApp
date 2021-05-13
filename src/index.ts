@@ -1,4 +1,4 @@
-import {app} from './app'
+import {app, upload} from './app'
 import {logger, PORT, HOME, zipDir} from './const';
 import * as fs from 'fs';
 import { response } from './util/interface';
@@ -88,5 +88,15 @@ app.post('/deleteElement', async (request, response) => {
             return response.json({status: 400, msg:"Failed to delete element"})
         }
         return response.json({status: 200, msg:''})
+    })
+})
+
+app.post('/upload', async(request, response) => {
+    logger.info('request: POST | route: upload')
+    const form = JSON.parse(request.body.data);
+    fs.readdir('src/util/multer/', (err, dirent)=> {
+        fs.rename('src/util/multer/'+dirent[0], HOME+form.path+form.name, (err)=>{
+            if (err) console.log(err);
+        })
     })
 })

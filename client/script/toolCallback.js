@@ -56,3 +56,36 @@ const deleteEl = () => {
     })
     document.getElementById("myForm2").style.display = "none";
 }
+
+const toolUpload = document.getElementById('toolUpload');
+toolUpload.onclick = () => { document.getElementById('inputFile').click();}
+
+const uploadFile = async (file) => {
+
+    let dataForm = new FormData();
+    const data = {
+        name : file.files[0].name,
+        type : file.files[0].name.split('.')[file.files[0].name.split('.').length-1],
+        path : getCurrentPath()
+    }
+    
+    dataForm.append('file', file.files[0]);
+    dataForm.append('data', JSON.stringify(data));
+    
+    const ctrl = new AbortController();
+    setTimeout(() => ctrl.abort(), 10000);
+    
+    console.log(file.files)
+
+    try{
+        fetch(serverUrl+'upload', {
+            method: 'POST',
+            body: dataForm,
+        })
+            .then(res => res.json())
+            .then(data => {console.log(data)})
+            .catch(err => {console.log(err)})
+    }catch(err){
+        console.log(err)
+    }
+}
