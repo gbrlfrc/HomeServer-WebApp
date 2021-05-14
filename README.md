@@ -16,7 +16,7 @@ Access to remote File System via Web-App.<br>
 | --- | --- | --- | 
 | list | parse directory provided by user as absolute path |  
 
-``` 
+` 
   json {
     status : 200 | 400
     dirent : Array<JSON> | null
@@ -24,7 +24,7 @@ Access to remote File System via Web-App.<br>
     isFile : boolean
     fileCont : Array<string> | null
   } 
-``` |
+` |
 
 | download | retrive as attachment
 
