@@ -57,6 +57,17 @@ Access to remote File System via Web-App.<br>
 | `/refreshToken` | POST | generate new RefreshToken | JSON JSON | 
 | `/logOut` | DELETE | remove RefreshToken from tokenDB | JSON | JSON |
 
+* The `/signUp` request need a JSON with the following structure : <br>
+
+```javascript
+const user = {
+ name : string,
+ mail : string,
+ password : string,
+}
+```
+The JSON for the `/logIn` endpoint is closely the same, need only the `name` and `password` fields.
+
 * To start client simply open `HomeServer-WebApp/client/index.html` on an HTTP server like [Apache](https://www.html.it/guide/guida-apache/) or [VS-Code LiveServer](https://github.com/ritwickdey/vscode-live-server) extension.
 
 # ToDo
