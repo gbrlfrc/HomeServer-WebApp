@@ -20,6 +20,8 @@ Access to remote File System via Web-App.<br>
 | `/deleteElement` | POST | delete an element | relative path as string | JSON | 
 | `/upload` | POST | upload file | Form-Data | JSON |
 
+* the `/list` returned Object has the following structure : <br>
+
 ```javascript
   OBJ{
     status : 200 || 400,
