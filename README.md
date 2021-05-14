@@ -9,6 +9,8 @@ Access to remote File System via Web-App.<br>
 * `cd HomeServer-WebApp && yarn install` to install dependecies.
 <br>
 
+##File-Manager Server
+
 * To start __File-Manager Server__ `yarn start /absoulute/path/to/dir`.
 <br>NOTE: alternatively you can use the bash script `start.sh` passing the directory as argument. <br>
 
@@ -46,9 +48,11 @@ Access to remote File System via Web-App.<br>
   form.append('data', JSON.stringify(data))
 ```
 
+##OAuth Server
+
 * To start __OAuth Server__ we need to create SECRETS from tokens generation first: 
- * run `hexdump -n 16 -e '4/4 "%08X" 1 "\n"' /dev/random` twice, and save the results in `HomeServer-WebApp/OAuth/util/.env.ts`
- as string in access and refresh token variable 
+  * run `hexdump -n 16 -e '4/4 "%08X" 1 "\n"' /dev/random` twice, and save the results in `HomeServer-WebApp/OAuth/util/.env.ts`
+  as string in access and refresh token variable 
   * `yarn startOauth`.
 <br>NOTE: alternatively you can use the bash script `startOAuth.sh`.<br>
 
