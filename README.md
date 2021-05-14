@@ -12,9 +12,15 @@ Access to remote File System via Web-App.<br>
 * To start file-manager server `yarn dev /absoulute/path/to/dir` or `yarn start /absoulute/path/to/dir`.
 <br>NOTE: alternatively you can use the bash script `start.sh` passing the directory as argument. <br>
 
-| API | DESCRIPTION | RETURNED TYPE |
-| --- | --- | --- | 
-| list | parse directory provided by user as absolute path | ```javascript
+| API | METHOD | DESCRIPTION | REQUESTED BODY | RETURNED TYPE |
+| --- | --- | --- | --- | --- | 
+| `/list` | GET | parse directory provided by user as absolute path | null | JSON |
+| `/download` | POST | retrive file or directory as attachment | relative path as string | ATTACHMENT |
+| `/newDir` | POST | create new directory | relative path as string | JSON |
+| `/deleteElement` | POST | delete an element | relative path as string | JSON | 
+| `/upload` | POST | upload file | Form-Data | JSON |
+
+```javascript
   OBJ{
     status : 200 || 400,
     dirent : Array<JSON> || null,
