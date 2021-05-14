@@ -46,7 +46,10 @@ Access to remote File System via Web-App.<br>
   form.append('data', JSON.stringify(data))
 ```
 
-* To start __OAuth Server__ `yarn startOauth`.
+* To start __OAuth Server__ we need to create SECRETS from tokens generation first: 
+ * run `hexdump -n 16 -e '4/4 "%08X" 1 "\n"' /dev/random` twice, and save the results in `HomeServer-WebApp/OAuth/util/.env.ts`
+ as string in access and refresh token variable 
+  * `yarn startOauth`.
 <br>NOTE: alternatively you can use the bash script `startOAuth.sh`.<br>
 
 | API | METHOD | DESCRIPTION | REQUESTED BODY | RETURNED TYPE |
