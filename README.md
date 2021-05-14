@@ -14,8 +14,7 @@ Access to remote File System via Web-App.<br>
 
 | API | DESCRIPTION | RETURNED TYPE |
 | --- | --- | --- | 
-| list | parse directory provided by user as absolute path | 
-```javascript
+| list | parse directory provided by user as absolute path | ```javascript
   OBJ{
     status : 200 || 400,
     dirent : Array<JSON> || null,
