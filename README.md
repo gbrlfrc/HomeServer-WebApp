@@ -68,7 +68,7 @@ const user = {
 ```
 The JSON for the `/logIn` endpoint is closely the same, need only the `name` and `password` fields.<br>
 
-<br>Example of requests are in [FileManager](https://github.com/gbrlfrc/HomeServer-WebApp/blob/main/src/util/request.rest) and [OAuth](https://github.com/gbrlfrc/HomeServer-WebApp/blob/main/OAuth/util/request.rest)<br>
+<br>__Example of requests are in [FileManager](https://github.com/gbrlfrc/HomeServer-WebApp/blob/main/src/util/request.rest) and [OAuth](https://github.com/gbrlfrc/HomeServer-WebApp/blob/main/OAuth/util/request.rest)__ <br><br>
 * To start client simply open `HomeServer-WebApp/client/index.html` on an HTTP server like [Apache](https://www.html.it/guide/guida-apache/) or [VS-Code LiveServer](https://github.com/ritwickdey/vscode-live-server) extension.
 
 # ToDo
