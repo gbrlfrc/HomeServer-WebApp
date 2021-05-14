@@ -14,19 +14,16 @@ Access to remote File System via Web-App.<br>
 
 | API | DESCRIPTION | RETURNED TYPE |
 | --- | --- | --- | 
-| list | parse directory provided by user as absolute path |  
+| list | parse directory provided by user as absolute path | `json {`                     |
+|      |                                                   | `  status : 200 | 400`       |
+|      |                                                   | `  dirent : Array<JSON>`     |
+|      |                                                   | `  path : string`            |
+|      |                                                   | `  isFile : boolean`         |
+|      |                                                   | `  fileCont : Array<string>` |
+|      |                                                   | `  isFile : boolean`         |
+|      |                                                   | `}`                          |
 
-` 
-  json {
-    status : 200 | 400
-    dirent : Array<JSON> | null
-    path : string
-    isFile : boolean
-    fileCont : Array<string> | null
-  } 
-` |
 
-| download | retrive as attachment
 
 * To start client simply open `HomeServer-WebApp/client/index.html` on an HTTP server like [Apache](https://www.html.it/guide/guida-apache/) or [VS-Code LiveServer](https://github.com/ritwickdey/vscode-live-server) extension.
 
