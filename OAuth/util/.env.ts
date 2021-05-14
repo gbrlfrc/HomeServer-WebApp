@@ -1,2 +1,2 @@
-export const access_secret = '';
-export const refresh_secret = '';
+export const access_secret = '38b66b13155e48658dbbcf2519f57d990922da52097fb356d8aaf8c9c7ff2a461b38d2ca47c4583d7fa930dc77a1f6cd';
+export const refresh_secret = '853d0436968c59544358560a7aec0a5feb88cae0263b0779357eb25c4471a754533ea003ff971e1877f13fb995f5df2c';

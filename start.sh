@@ -1,1 +1,1 @@
-yarn dev /home/gabriele/CodeProjects
+yarn dev /home/$USER/CodeProjects
