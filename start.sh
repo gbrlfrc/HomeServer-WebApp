@@ -1,1 +1,1 @@
-yarn dev /home/gabriele/CodeProjects
+yarn dev /absolute/path/to/dir
