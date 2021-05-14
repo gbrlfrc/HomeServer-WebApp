@@ -54,7 +54,7 @@ Access to remote File System via Web-App.<br>
 | `/signUp` | POST | add new user to userDB | JSON | JSON |
 | `/logIn` | POST | user authenitcation | JSON | JSON |
 | `/verify` | GET | verify AccessToken provided at logIn | JSON | JSON |
-| `/refreshToken` | POST | generate new RefreshToken | JSON JSON | 
+| `/refreshToken` | POST | generate new RefreshToken | JSON | JSON | 
 | `/logOut` | DELETE | remove RefreshToken from tokenDB | JSON | JSON |
 
 * The `/signUp` request need a JSON with the following structure : <br>
@@ -66,8 +66,9 @@ const user = {
  password : string,
 }
 ```
-The JSON for the `/logIn` endpoint is closely the same, need only the `name` and `password` fields.
+The JSON for the `/logIn` endpoint is closely the same, need only the `name` and `password` fields.<br>
 
+<br>Example of requests are in [FileManager](https://github.com/gbrlfrc/HomeServer-WebApp/blob/main/src/util/request.rest) and [OAuth](https://github.com/gbrlfrc/HomeServer-WebApp/blob/main/OAuth/util/request.rest)<br>
 * To start client simply open `HomeServer-WebApp/client/index.html` on an HTTP server like [Apache](https://www.html.it/guide/guida-apache/) or [VS-Code LiveServer](https://github.com/ritwickdey/vscode-live-server) extension.
 
 # ToDo
