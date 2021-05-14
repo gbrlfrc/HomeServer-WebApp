@@ -31,8 +31,20 @@ Access to remote File System via Web-App.<br>
     fileCont : Array<string>
   }
 ``` 
-|
+* the `/upload` reuqest need to be submitted as follow : <br>
 
+```javascript
+  let form = new FormData();
+  
+  const form = {
+      name : string [name of file],
+      type : string [extension of file]
+      path : string [relative path to the file]
+  };
+  
+  form.append('file', file as file)
+  form.append('data', JSON.stringify(data))
+```
 
 * To start client simply open `HomeServer-WebApp/client/index.html` on an HTTP server like [Apache](https://www.html.it/guide/guida-apache/) or [VS-Code LiveServer](https://github.com/ritwickdey/vscode-live-server) extension.
 
