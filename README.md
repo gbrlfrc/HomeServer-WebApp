@@ -37,12 +37,12 @@ Access to remote File System via Web-App.<br>
   let form = new FormData();
   
   const form = {
-      name : string [name of file],
-      type : string [extension of file]
-      path : string [relative path to the file]
+      name : string, //name of file
+      type : string, //extension of file
+      path : string, //relative path to the file
   };
   
-  form.append('file', file as file)
+  form.append('file', file) // type file
   form.append('data', JSON.stringify(data))
 ```
 
