@@ -20,7 +20,7 @@ Access to remote File System via Web-App.<br>
 | `/deleteElement` | POST | delete an element | relative path as string | JSON | 
 | `/upload` | POST | upload file | Form-Data | JSON |
 
-* the `/list` returned Object has the following structure : <br>
+  * the `/list` returned Object has the following structure : <br>
 
 ```javascript
   OBJ{
@@ -31,7 +31,7 @@ Access to remote File System via Web-App.<br>
     fileCont : Array<string>
   }
 ``` 
-* the `/upload` reuqest need to be submitted as follow : <br>
+  * the `/upload` reuqest need to be submitted as follow : <br>
 
 ```javascript
   let form = new FormData();
