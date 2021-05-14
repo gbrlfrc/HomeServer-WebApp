@@ -9,7 +9,7 @@ Access to remote File System via Web-App.<br>
 * `cd HomeServer-WebApp && yarn install` to install dependecies.
 <br>
 
-* To start file-manager server `yarn dev /absoulute/path/to/dir` or `yarn start /absoulute/path/to/dir`.
+* To start __File-Manager Server__ `yarn start /absoulute/path/to/dir`.
 <br>NOTE: alternatively you can use the bash script `start.sh` passing the directory as argument. <br>
 
 | API | METHOD | DESCRIPTION | REQUESTED BODY | RETURNED TYPE |
@@ -36,7 +36,7 @@ Access to remote File System via Web-App.<br>
 ```javascript
   let form = new FormData();
   
-  const form = {
+  const data = {
       name : string, //name of file
       type : string, //extension of file
       path : string, //relative path to the file
@@ -45,6 +45,17 @@ Access to remote File System via Web-App.<br>
   form.append('file', file) // type file
   form.append('data', JSON.stringify(data))
 ```
+
+* To start __OAuth Server__ `yarn startOauth`.
+<br>NOTE: alternatively you can use the bash script `startOAuth.sh`.<br>
+
+| API | METHOD | DESCRIPTION | REQUESTED BODY | RETURNED TYPE |
+| --- | --- | --- | --- | --- | 
+| `/signUp` | POST | add new user to userDB | JSON | JSON |
+| `/logIn` | POST | user authenitcation | JSON | JSON |
+| `/verify` | GET | verify AccessToken provided at logIn | JSON | JSON |
+| `/refreshToken` | POST | generate new RefreshToken | JSON JSON | 
+| `/logOut` | DELETE | remove RefreshToken from tokenDB | JSON | JSON |
 
 * To start client simply open `HomeServer-WebApp/client/index.html` on an HTTP server like [Apache](https://www.html.it/guide/guida-apache/) or [VS-Code LiveServer](https://github.com/ritwickdey/vscode-live-server) extension.
 
