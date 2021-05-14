@@ -19,7 +19,7 @@ app.get('/list', async (request, response) =>{
         fs.readdir(PATH, (err, dirent) => {   
             if (err) return response.json(
                 <response>{
-                    status: 404, 
+                    status: 400, 
                     dirent: null, 
                     path: relPath, 
                     isFile: false, 

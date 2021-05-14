@@ -1,0 +1,36 @@
+POST http://localhost:4000/signUp
+Content-Type: application/json
+
+{
+    "userName": "gabriele",
+    "password": "ui6be3iem4"
+}
+
+###
+POST http://localhost:4000/logIn
+Content-Type: application/json
+
+{
+    "userName" : "gabriele",
+    "password" : "ui6be3iem4"
+}
+
+###
+GET http://localhost:4000/verify
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiZ2FicmllbGUiLCJwYXNzd29yZCI6InVpNmJlM2llbTQiLCJpYXQiOjE2MjEwMDY3OTQsImV4cCI6MTYyMTAwNjg1NH0.3ehz6mbsZES67rIem_0y3oBZLwIBoc8IWlQOzBqPOP4
+
+###
+POST http://localhost:4000/refreshToken
+Content-Type: application/json
+
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiZ2FicmllbGUiLCJwYXNzd29yZCI6InVpNmJlM2llbTQiLCJpYXQiOjE2MjEwMDY3Mjl9.n-x2FVfKUZHrtTdoUA54yxYnkOMGS343lCoKMbEXn80"
+}
+
+###
+DELETE http://localhost:4000/logOut
+Content-Type: application/json
+
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiZ2FicmllbGUiLCJtYWlsIjoiZ2hpYmJvNTdAZ21haWwuY29tIiwicGFzc3dvcmQiOiJ1aTZiZTNpZW00IiwiaWF0IjoxNjE5NjEyMTMzfQ.VWwAYuPYaRKdwN0b5QjxkGTZ6mh-5wev1Ymya9vqR0w"
+}

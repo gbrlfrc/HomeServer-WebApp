@@ -9,8 +9,24 @@ Access to remote File System via Web-App.<br>
 * `cd HomeServer-WebApp && yarn install` to install dependecies.
 <br>
 
-* To start server `yarn dev /absoulute/path/to/dir` or `yarn start /absoulute/path/to/dir`.
-<br>NOTE: alternatively you can use the bash script `start.sh` passing the directory as argument.
+* To start file-manager server `yarn dev /absoulute/path/to/dir` or `yarn start /absoulute/path/to/dir`.
+<br>NOTE: alternatively you can use the bash script `start.sh` passing the directory as argument. <br>
+
+| API | DESCRIPTION | RETURNED TYPE |
+| --- | --- | --- | 
+| list | parse directory provided by user as absolute path |  
+
+``` 
+  json {
+    status : 200 | 400
+    dirent : Array<JSON> | null
+    path : string
+    isFile : boolean
+    fileCont : Array<string> | null
+  } 
+``` |
+
+| download | retrive as attachment
 
 * To start client simply open `HomeServer-WebApp/client/index.html` on an HTTP server like [Apache](https://www.html.it/guide/guida-apache/) or [VS-Code LiveServer](https://github.com/ritwickdey/vscode-live-server) extension.
 
@@ -22,12 +38,12 @@ Access to remote File System via Web-App.<br>
 - [x] API: upload single file
 - [ ] API: upload directory
 - [ ] OAuth Server
-  - [ ] Authentication
-    - [ ] NeDB database credentials
-    - [ ] Bcrypt credentials encrypting 
+  - [x] Authentication
+    - [x] NeDB database credentials
+    - [x] Bcrypt credentials encrypting 
   - [ ] Authorization
     - [ ] Access and Refresh token workflow
 - [x] CLIENT: FileManager workflow
-- [ ] CLIENT: LogIn
+- [x] CLIENT: LogIn
 - [ ] CLIENT: js, python, html, css Parser
 - [ ] CLIENT: Live editor
